@@ -1,7 +1,7 @@
 # Updated Makefile for the phonebook project
 
 # Name of your executable
-TARGET = zombie
+TARGET = sed
 
 # Compiler to use
 CXX = g++
@@ -11,9 +11,6 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
 # Source files
 SRC = main.cpp \
- HumanA.cpp \
- HumanB.cpp \
- Weapon.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

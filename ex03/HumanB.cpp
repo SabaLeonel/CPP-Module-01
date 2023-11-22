@@ -1,6 +1,6 @@
-#include HumanB.hpp
+#include "HumanB.hpp"
 
-HumanB::HumanB(void)
+HumanB::HumanB(std::string name) : _name(name)
 {
     std::cout << this->_name <<" is born" << std::endl;
 }
