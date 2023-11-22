@@ -21,3 +21,14 @@ int main()
     }
     return 0;
 }
+
+
+// NULL Test
+// {
+//         Weapon club = Weapon("");
+//         HumanB jim("Jim");
+//         jim.setWeapon(club);
+//         jim.attack();
+//         club.setType("some other type of club");
+//         jim.attack();
+// }

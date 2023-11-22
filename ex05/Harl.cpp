@@ -10,7 +10,23 @@ Harl::~Harl(void)
     return ;
 }
 
-void Harl::complain(std::string level) ()
+void Harl::complain(std::string level) {
+    // Create a mapping of complaint levels to member functions
+    std::map<std::string, void (Harl::*)()> complaintsLevels;
+    complaintsLevels["DEBUG"] = &Harl::debug;
+    complaintsLevels["INFO"] = &Harl::info;
+    complaintsLevels["WARNING"] = &Harl::warning;
+    complaintsLevels["ERROR"] = &Harl::error;
+
+    // Find the corresponding member function and call it
+    std::map<std::string, void (Harl::*)()>::iterator complaintFunc = complaintsLevels.find(level);
+    if (complaintFunc != complaintsLevels.end()) {
+        (this->*(complaintFunc->second))();
+    } else {
+        std::cout << "Unknown complaint level: " << level << std::endl;
+    }
+}
+
 
 void Harl::debug(void)
 {
@@ -19,7 +35,7 @@ void Harl::debug(void)
 
 void Harl::info(void)
 {
-    std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!" << std::endl;
+    std::cout << "I cannot believe adding extra bacon` cost more money. You don’t put enough! If you did I would not have to ask for it!" << std::endl;
 }
 
 void Harl::warning(void)

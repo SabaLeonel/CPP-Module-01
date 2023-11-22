@@ -9,7 +9,6 @@ int main(void)
     // creating a reference to the variable
     std::string &varREF = var;
 
-    std::cout << std::endl;
     std::cout << "var address: \t\t" << &var << std::endl;
     std::cout << "varPTR address: \t" << varPTR << std::endl;
     std::cout << "varREF address: \t" << &varREF << std::endl;

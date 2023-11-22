@@ -4,7 +4,7 @@
 TARGET = sed
 
 # Compiler to use
-CXX = g++
+CXX = c++
 
 # Compiler flags
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g

@@ -31,8 +31,13 @@ int main (int ac, char **av)
         std::cout << "Error: can't open file" << std::endl;
         return (1);
     }
+    if (ifs.peek() == EOF) {
+        std::cout << "File is empty or at EOF." << std::endl;
+        return (1);
+    } 
     std::string line;
-    while (std::getline(ifs, line)) {
+    while (std::getline(ifs, line)) 
+    {
         size_t startPos = 0;
         size_t foundPos;
         while ((foundPos = line.find(s1, startPos)) != std::string::npos) {
@@ -48,11 +53,12 @@ int main (int ac, char **av)
         // Copy the remaining characters in the line
         ofs << line.substr(startPos) << std::endl;
     }
+   // check if file is not empty
+    std::cout << "File " << filename << " has been processed, and the result is stored in " << outputfile << std::endl;
 
     ifs.close();
     ofs.close();
 
-    std::cout << "File " << filename << " has been processed, and the result is stored in " << outputfile << std::endl;
 
     return (0);
 }
